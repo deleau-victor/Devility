@@ -705,7 +705,6 @@ dependencies = [
 name = "devility"
 version = "0.1.0"
 dependencies = [
- "embed-resource",
  "serde",
  "serde_json",
  "tauri",

@@ -1,6 +1,7 @@
 <script lang="ts" async setup>
 import { usePortForwarding } from "@/Features/PortForwarding/Application/usePortForwarding";
 import { PortRule } from "@/Features/PortForwarding/Domain/Entities/PortRule";
+import { RefreshCcw } from "lucide-vue-next";
 
 const { portRules, LoadPortRules, RemovePortRule } = usePortForwarding();
 
@@ -12,7 +13,10 @@ const remove = async (rule: PortRule) => {
 <template>
 	<div class="forward-container">
 		<div class="forward-header">
-			<h2>Règles de redirection</h2>
+			<div class="forward-header-left">
+				<h2>Règles de redirection</h2>
+				<RefreshCcw />
+			</div>
 			<AddPortForm />
 		</div>
 
@@ -63,6 +67,15 @@ const remove = async (rule: PortRule) => {
 		font-size: 1.4rem;
 		font-weight: 600;
 		color: var(--text-base);
+	}
+
+	&-left {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		& svg {
+			color: var(--text-base);
+		}
 	}
 
 	.add-button {

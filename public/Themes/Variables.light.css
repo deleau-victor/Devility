@@ -5,8 +5,17 @@
 	--background-invert: 17, 17, 17;
 	--background-invert-accent: 28, 28, 28;
 
+	/* Blue Aqua as primary color */
+	--background-primary: 0, 151, 167;
+	/* Primary accent a lighter */
+	--background-primary-accent: 0, 188, 212;
+
 	/* Text */
 	--text-base: #494b4d;
+	--text-primary: rgb(0, 188, 212);
+	--text-primary-value: 0, 188, 212;
+	--text-primary-accent: rgb(128, 222, 234);
+	--text-primary-accent-value: 128, 222, 234;
 	--text-invert: #f9f9f9;
 	--text-accent: #f0f0f0;
 	--text-danger: #fa2255;

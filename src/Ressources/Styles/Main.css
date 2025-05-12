@@ -41,6 +41,10 @@ html {
 	overflow: hidden;
 }
 
+#app {
+	width: -webkit-fill-available;
+}
+
 body {
 	position: relative;
 	margin: 0;
