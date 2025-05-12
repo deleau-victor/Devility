@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+echo "🔨 Build portforwardd (release)"
+cd ../portforwardd
+cargo build --release
+
+echo "📁 Préparation dossier pkg-root"
+cd ../pkg
+mkdir -p pkg-root/usr/local/bin
+cp ../portforwardd/target/release/portforwardd pkg-root/usr/local/bin/
+
+echo "📦 Génération du .pkg"
+pkgbuild \
+  --root pkg-root \
+  --scripts scripts \
+  --identifier com.devility.portforwardd \
+  --version 1.0.0 \
+  --install-location / \
+  devility-portforwardd.pkg
+
+echo "✅ .pkg généré : devility-portforwardd.pkg"

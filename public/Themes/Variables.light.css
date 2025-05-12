@@ -1,0 +1,13 @@
+:root {
+	/* Background */
+	--background-base: 255, 255, 255;
+	--background-accent: 248, 248, 248;
+	--background-invert: 17, 17, 17;
+	--background-invert-accent: 28, 28, 28;
+
+	/* Text */
+	--text-base: #494b4d;
+	--text-invert: #f9f9f9;
+	--text-accent: #f0f0f0;
+	--text-danger: #fa2255;
+}

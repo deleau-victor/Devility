@@ -1,0 +1,37 @@
+#!/bin/bash
+
+PORTFWD_BIN="/usr/local/bin/portforwardd"
+RULE_DIR="/etc/devility"
+RULE_FILE="$RULE_DIR/port_forwarding.conf"
+PF_CONF="/etc/pf.conf"
+INCLUDE_LINE="include \"$RULE_FILE\""
+
+echo "🔧 Post-install Devility"
+
+chown root:wheel "$PORTFWD_BIN"
+chmod u+s "$PORTFWD_BIN"
+
+mkdir -p "$RULE_DIR"
+touch "$RULE_FILE"
+
+if ! grep -qF "$INCLUDE_LINE" "$PF_CONF"; then
+    TMP_FILE=$(mktemp)
+    inserted=false
+    while IFS= read -r line; do
+        if [[ "$inserted" == false && "$line" =~ ^(anchor|pass|block|load) ]]; then
+            echo "$INCLUDE_LINE" >> "$TMP_FILE"
+            inserted=true
+        fi
+        echo "$line" >> "$TMP_FILE"
+    done < "$PF_CONF"
+    if [ "$inserted" = false ]; then
+        echo "$INCLUDE_LINE" >> "$TMP_FILE"
+    fi
+    cp "$TMP_FILE" "$PF_CONF"
+    rm "$TMP_FILE"
+fi
+
+pfctl -f "$PF_CONF"
+pfctl -e || true
+
+echo "✅ portforwardd installé et prêt"

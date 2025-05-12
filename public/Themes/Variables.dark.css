@@ -1,0 +1,22 @@
+:root {
+	/* Background */
+	--background-base: 17, 17, 17;
+	--background-accent: 28, 28, 28;
+	--background-invert: 255, 255, 255;
+	--background-invert-accent: 248, 248, 248;
+
+	/* Blue Aqua as primary color */
+	--background-primary: 0, 151, 167;
+	/* Primary accent a lighter */
+	--background-primary-accent: 0, 188, 212;
+
+	/* Text */
+	--text-base: #f9f9f9;
+	--text-primary: rgb(0, 188, 212);
+	--text-primary-value: 0, 188, 212;
+	--text-primary-accent: rgb(128, 222, 234);
+	--text-primary-accent-value: 128, 222, 234;
+	--text-invert: #494b4d;
+	--text-accent: #bab1b1;
+	--text-danger: #fa2255;
+}

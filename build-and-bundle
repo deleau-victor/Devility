@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+
+APP_NAME="Devility"
+PKG_NAME="devility-portforwardd.pkg"
+DMG_NAME="DevilityInstaller.dmg"
+BUNDLE_DIR="bundle"
+
+echo "🛠️ Compilation de portforwardd..."
+cd ./portforwardd
+cargo build --release
+cd ..
+
+echo "📦 Génération du .pkg..."
+./pkg/build-devility-pkg
+
+echo "🌐 Build de l'application Tauri..."
+pnpm tauri build
+
+APP_PATH="src-tauri/target/release/bundle/macos/${APP_NAME}.app"
+PKG_PATH="pkg/${PKG_NAME}"
+
+if [ ! -d "$APP_PATH" ]; then
+  echo "❌ Erreur : ${APP_NAME}.app introuvable à $APP_PATH"
+  exit 1
+fi
+
+if [ ! -f "$PKG_PATH" ]; then
+  echo "❌ Erreur : ${PKG_NAME} introuvable à $PKG_PATH"
+  exit 1
+fi
+
+echo "📁 Préparation du dossier ${BUNDLE_DIR}/..."
+rm -rf "$BUNDLE_DIR"
+mkdir -p "$BUNDLE_DIR"
+cp -R "$APP_PATH" "$BUNDLE_DIR/"
+cp "$PKG_PATH" "$BUNDLE_DIR/DevilityHelper.pkg"
+
+echo "💿 Création du fichier DMG..."
+create-dmg \
+  --volname "$APP_NAME Installer" \
+  --window-size 600 400 \
+  --app-drop-link 400 200 \
+  --icon "${APP_NAME}.app" 100 200 \
+  --icon "DevilityHelper.pkg" 250 200 \
+  "./$DMG_NAME" \
+  "$BUNDLE_DIR"
+
+
+echo "✅ Fichier DMG créé : ./${DMG_NAME}"

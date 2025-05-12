@@ -1,0 +1,144 @@
+/* ***************************** */
+/* *********** FONTS *********** */
+/* ***************************** */
+
+/* BDO Grotesk font */
+@font-face {
+	font-family: BDO Grotesk DemiBold;
+	src: url("../../../../ressources/Fonts/BDOGrotesk/BDOGrotesk-DemiBold.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: BDO Grotesk Medium;
+	src: url("../../../../ressources/Fonts/BDOGrotesk/BDOGrotesk-Medium.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: BDO Grotesk Regular;
+	src: url("../../../../ressources/Fonts/BDOGrotesk/BDOGrotesk-Regular.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: BDO Grotesk Bold;
+	src: url("../../../../ressources/Fonts/BDOGrotesk/BDOGrotesk-Bold.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: BDO Grotesk DemiBold Placeholder;
+	src: local("Arial");
+	ascent-override: 98.55%;
+	descent-override: 26.88%;
+	line-gap-override: 0%;
+	size-adjust: 111.61%;
+}
+@font-face {
+	font-family: BDO Grotesk Medium Placeholder;
+	src: local("Arial");
+	ascent-override: 100.85%;
+	descent-override: 27.5%;
+	line-gap-override: 0%;
+	size-adjust: 109.07%;
+}
+@font-face {
+	font-family: BDO Grotesk Regular Placeholder;
+	src: local("Arial");
+	ascent-override: 102.41%;
+	descent-override: 27.93%;
+	line-gap-override: 0%;
+	size-adjust: 107.41%;
+}
+@font-face {
+	font-family: BDO Grotesk Bold Placeholder;
+	src: local("Arial");
+	ascent-override: 96.74%;
+	descent-override: 26.38%;
+	line-gap-override: 0%;
+	size-adjust: 113.71%;
+}
+
+/* Garnett font */
+@font-face {
+	font-family: "Garnett";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: italic;
+	font-weight: 300;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-LightItalic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-RegularItalic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-Medium.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: italic;
+	font-weight: 500;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-Semibold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-SemiboldItalic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-Black.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Garnett";
+	font-style: italic;
+	font-weight: 900;
+	font-display: swap;
+	src: url("../../../../ressources/Fonts/Garnett/Garnett-BlackItalic.ttf") format("truetype");
+}
