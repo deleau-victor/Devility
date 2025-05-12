@@ -38,7 +38,8 @@ pub fn list_port_rules() -> Result<Vec<PortRuleDto>, String> {
 }
 
 #[tauri::command]
-pub fn remove_port_rule(listen_port: u16) -> Result<(), String> {
+pub fn remove_port_rule(listen_address: Option<String>, listen_port: u16) -> Result<(), String> {
 	println!("📩 [Rust] Appel de remove_port_rule()");
-	port_forwarding::remove_rule(listen_port)
+	port_forwarding::remove_rule(listen_address.unwrap_or("127.0.0.1".into()), listen_port)
 }
+
